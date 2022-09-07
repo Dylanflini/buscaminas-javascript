@@ -1,0 +1,51 @@
+:root {
+	font-family: system-ui, sans-serif;
+}
+
+#root > div {
+	display: grid;
+	grid-template-columns: repeat(var(--columns), 1fr);
+}
+
+#root {
+	width: min-content;
+	margin: auto;
+}
+
+.button {
+	width: 2rem;
+	height: 2rem;
+}
+
+[data-has-bomb='true'] {
+	background-color: red;
+}
+
+[data-marked-as-bomb='true'] {
+	background-color: yellow;
+}
+
+.cell:disabled {
+	background-color: hsl(0, 0%, 76%);
+	color: black;
+}
+
+.cell:enabled {
+	background-color: hsl(0, 0%, 85%);
+	color: red;
+	border-left: 2px solid white;
+	border-top: 2px solid white;
+	border-right: 2px solid gray;
+	border-bottom: 2px solid gray;
+	cursor: pointer;
+}
+
+.cell:hover:enabled {
+	filter: contrast(120%);
+}
+
+.cell:active {
+	filter: contrast(100%);
+	background-color: hsl(0, 0%, 76%);
+	color: black;
+}
